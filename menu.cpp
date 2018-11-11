@@ -25,7 +25,7 @@ void Menu::removeMenu(Pool pool) {
     cin >> name;
     try {
         for (int i = 0; i < pool.entries.size(); i++) {
-            if (pool.entries[i]->title.compare(name) == true) {
+            if (pool.entries[i]->showTitle().compare(name) == true) {
                 pool-=name;
                 return;
             }
@@ -36,14 +36,14 @@ void Menu::removeMenu(Pool pool) {
     }
 }
 
-void Menu::displayMenu(Pool pool) {
+void Menu::showMenu(Pool pool) {
     cout << "----------------------+DISPLAY+----------------------" << endl;
     cout << "type in the title you want to view" << endl;
     string name;
     cin >> name;
     try {
         for (int i = 0; i < pool.entries.size(); i++) {
-            if (pool.entries[i]->title.compare(name) == true) {
+            if (pool.entries[i]->showTitle().compare(name) == true) {
                 pool.entries[i]->showStatistics();
                 return;
             }
@@ -55,7 +55,7 @@ void Menu::displayMenu(Pool pool) {
 }
 
 void Menu::displayMenu(Pool pool) {
-    cout << "----------------------+REMOVE+----------------------" << endl;
+    cout << "----------------------+MENU+----------------------" << endl;
     cout << "type in:\n1 - to add an entry\n2 - to remove an entry";
     int x;
     switch(x){

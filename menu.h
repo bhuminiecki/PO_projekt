@@ -17,6 +17,7 @@ public:
     float calculateFitness(std::string name);
     void creationMenu(Pool pool);
     void removeMenu(Pool pool);
+    void showMenu(Pool pool);
     void displayMenu(Pool pool);
 };
 
