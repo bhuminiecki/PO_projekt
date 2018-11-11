@@ -11,7 +11,7 @@ private:
     T object;
     std::string name;
 public:
-    Handler(std::string name) {
+    explicit Handler(std::string name) {
         object(name);
     }
 
