@@ -2,17 +2,15 @@
 
 using namespace std;
 
-void Movie::setRanking(int a)
-{
-    ranking=a;
+void Movie::setRanking(int a) {
+    ranking = a;
 }
 
-int Movie::showRanking()
-{
+int Movie::showRanking() {
     return ranking;
 }
 
-void Movie::showStatistics(){
+void Movie::showStatistics() {
     Entry::showStatistics();
-    cout<<"Ranking: "<<ranking<<endl;
+    cout << "Ranking: " << ranking << endl;
 }
