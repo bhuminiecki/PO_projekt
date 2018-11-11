@@ -13,6 +13,7 @@
 #include "entry.h"
 #include "movie.h"
 #include "event.h"
+#include "series.h"
 
 
 class Pool {

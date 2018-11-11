@@ -6,23 +6,14 @@
 
 using namespace std;
 
-#include <algorithm>
-#include <string>
-#include <iostream>
-#include <vector>
-#include "menu.h"
-
-using namespace std;
-
-void Menu::creationMenu(Pool pool){
-    cout<< "----------------------+CREATOR+----------------------" << endl;
-    cout<< "specify whether you'd like to create a 'movie','series' or 'event' entry"<<endl;
+void Menu::creationMenu(Pool pool) {
+    cout << "----------------------+CREATOR+----------------------" << endl;
+    cout << "specify whether you'd like to create a 'movie','series' or 'event' entry" << endl;
     string entryType;
-    cin>>entryType;
+    cin >> entryType;
 
     transform(entryType.begin(), entryType.end(), entryType.begin(), ::tolower);
-    if ((entryType != "movie") & (entryType != "series") & (entryType != "event"))
-    {
+    if ((entryType != "movie") & (entryType != "series") & (entryType != "event")) {
         throw invalid_argument("wrong type");
         return;
     }
@@ -33,22 +24,16 @@ void Menu::creationMenu(Pool pool){
     getline(cin, title);
     getline(cin, title);
 
-    if (entryType == "movie")
-    {
-        Handler<Movie> movieCreator = Handler<Movie>(title);
-    }
-    else if (entryType == "series")
-    {
-        Handler<Series> seriesCreator = Handler<Series>(title);
-    }
-    else if (entryType == "event")
-    {
-        Handler<Event> eventCreator = Handler<Event>(title);
+    if (entryType == "movie") {
+        Handler <Movie> movieCreator = Handler<Movie>(title);
+    } else if (entryType == "series") {
+        Handler <Series> seriesCreator = Handler<Series>(title);
+    } else if (entryType == "event") {
+        Handler <Event> eventCreator = Handler<Event>(title);
     }
 
     string wait;
     cin >> wait;
-}
 }
 
 void Menu::removeMenu(Pool pool) {
@@ -59,7 +44,7 @@ void Menu::removeMenu(Pool pool) {
     try {
         for (int i = 0; i < pool.entries.size(); i++) {
             if (pool.entries[i]->showTitle().compare(name) == true) {
-                pool-=name;
+                pool -= name;
                 return;
             }
         }
@@ -91,11 +76,11 @@ void Menu::displayMenu(Pool pool) {
     cout << "----------------------+MENU+----------------------" << endl;
     cout << "type in:\n1 - to add an entry\n2 - to remove an entry\n3 - to see an entry";
     int x;
-    switch(x){
+    switch (x) {
         case 1:
             try {
                 creationMenu(pool);
-            }catch (const invalid_argument is) {
+            } catch (const invalid_argument is) {
                 cerr << "Invalid argument: " << is.what();
             }
             break;
@@ -107,6 +92,10 @@ void Menu::displayMenu(Pool pool) {
             break;
 
         default:
-            throw(invalid_argument("wrong option"));
+            throw (invalid_argument("wrong option"));
     }
+}
+
+void Menu::showUpcoming(Pool pool) {
+
 }

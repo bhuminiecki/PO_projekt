@@ -7,6 +7,9 @@
 
 #include <string>
 #include <iostream>
+#include <ctime>
+#include <algorithm>
+#include <vector>
 #include "pool.h"
 #include "handler.h"
 
@@ -19,6 +22,7 @@ public:
     void removeMenu(Pool pool);
     void showMenu(Pool pool);
     void displayMenu(Pool pool);
+    void showUpcoming(Pool pool);
 };
 
 
