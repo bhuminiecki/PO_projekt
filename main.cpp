@@ -1,8 +1,10 @@
 #include <iostream>
 #include "entry.h"
+#include "event.h"
+#include "movie.h"
 
 int main() {
-    Entry obiekt("twoja stara");
+    Event obiekt("tutaj");
     obiekt.setLenght(60);
     obiekt.setRating(2.5);
     obiekt.addTag("haha");

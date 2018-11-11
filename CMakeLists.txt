@@ -3,4 +3,4 @@ project(PO_projekt)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(PO_projekt main.cpp entry.cpp entry.h)
+add_executable(PO_projekt main.cpp entry.cpp entry.h event.cpp event.h movie.cpp movie.h)

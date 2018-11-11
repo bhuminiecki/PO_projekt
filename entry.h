@@ -1,7 +1,3 @@
-//
-// Created by bhuminiecki on 11/11/2018.
-//
-
 #ifndef PO_PROJEKT_ENTRY_H
 #define PO_PROJEKT_ENTRY_H
 
@@ -9,7 +5,6 @@
 #include <vector>
 #include <iostream>
 #include <stdexcept>
-#include <tuple>
 
 class Entry{
 private:
@@ -26,7 +21,7 @@ public:
     int showLength();
     std::vector <std::string> showTags();
     float showFitness();
-    void showStatistics(void);
+    virtual void showStatistics(void);
     void addTag(std::string tag);
     void setLenght(int tempLenght);
     void setRating(float tempRating);
