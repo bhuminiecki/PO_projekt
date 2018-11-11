@@ -14,8 +14,8 @@ int main() {
     obiekt.removeTag("huhu");
     obiekt.removeTag("haha");
     obiekt.showStatistics();*/
-
     Pool pool = Pool();
+    pool.load();
     Menu menu = Menu();
     while (menu.displayMenu(pool));
     return 0;
