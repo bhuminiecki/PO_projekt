@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include "InputExeption.h"
 #include "pool.h"
 #include "handler.h"
 
@@ -21,6 +22,8 @@ public:
     void showMenu(Pool pool);
     void displayMenu(Pool pool);
     void showUpcoming(Pool pool);
+    void editEntry(Pool pool);
+    void suggest(Pool pool);
 };
 
 

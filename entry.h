@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <stdexcept>
+#include "InputExeption.h"
 #include <ctime>
 
 class Entry {

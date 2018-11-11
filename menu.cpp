@@ -116,6 +116,15 @@ void Menu::editEntry(Pool pool){
 }
 }
 
+void Menu::suggest(Pool pool) {
+    cout << "entries rated above 8.0" << endl;
+    for (int i = 0; i <= pool.entries.size(); i++) {
+
+        if (pool.entries[i]->showRating()>=8.0) {
+            cout << pool.entries[i]->showTitle() << endl;
+        }
+    }
+}
 
 
 bool Menu::displayMenu(Pool pool) {
@@ -140,7 +149,12 @@ bool Menu::displayMenu(Pool pool) {
         case 4:
             showUpcoming(pool);
             break;
-
+        case 5:
+            editEntry(pool);
+            break;
+        case 6:
+            suggest(pool);
+            break;
         case 10:
             pool.save();
             return false;

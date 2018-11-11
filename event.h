@@ -3,6 +3,7 @@
 
 #include "entry.h"
 #include <ctime>
+#include "InputExeption.h"
 
 class Event : public Entry {
 private:
