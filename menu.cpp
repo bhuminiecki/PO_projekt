@@ -74,9 +74,22 @@ void Menu::showMenu(Pool pool) {
     }
 }
 
-void Menu::displayMenu(Pool pool) {
+void Menu::showUpcoming(Pool pool) {
+    time_t now = time(0);
+    cout << "There are following events in less than 3 days from now:" << endl;
+    for (int i = 0; i <= pool.entries.size(); i++) {
+
+        if (((pool.entries[i]->showTime() - now) >= 0) && ((pool.entries[i]->showTime() - now) < 259200)) {
+            cout << pool.entries[i]->showTitle() << endl;
+        }
+    }
+}
+
+
+
+bool Menu::displayMenu(Pool pool) {
     cout << "----------------------+MENU+----------------------" << endl;
-    cout << "type in:\n1 - to add an entry\n2 - to remove an entry\n3 - to see an entry";
+    cout << "type in:\n1 - to add an entry\n2 - to remove an entry\n3 - to see an entry\n4 - show upcoming\n 10- close";
     int x;
     cin >> x;
     switch (x) {
@@ -93,20 +106,16 @@ void Menu::displayMenu(Pool pool) {
         case 3:
             showMenu(pool);
             break;
+        case 4:
+            showUpcoming(pool);
+            break;
 
+        case 10:
+            pool.save();
+            return false;
         default:
             throw (invalid_argument("wrong option"));
     }
-}
-
-void Menu::showUpcoming(Pool pool) {
-    time_t now = time(0);
-    cout << "There are following events in less than 3 days from now:" << endl;
-    for (int i = 0; i <= pool.entries.size(); i++) {
-
-        if (((pool.entries[i]->showTime() - now) >= 0) && ((pool.entries[i]->showTime() - now) < 259200)) {
-            cout << pool.entries[i]->showTitle() << endl;
-        }
-    }
+    return true;
 }
 
