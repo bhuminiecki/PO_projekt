@@ -2,7 +2,7 @@
 // Created by Wombat on 11/11/2018.
 //
 
-#include "pool.h"
+#include "Pool.h"
 
 using namespace std;
 
@@ -26,10 +26,18 @@ void Pool::removeEntry(string name) {
     }
 }
 
-Pool operator+=(Pool x, Entry entry) {
-    x.addEntry(&entry);
+Pool operator+=(Pool x, Entry *entry) {
+    x.addEntry(entry);
 }
 
-Pool operator+=(Pool x, string name){
+Pool operator-=(Pool x, std::string name) {
     x.removeEntry(name);
+}
+
+Pool::~Pool() {
+    //TODO: implement pool destructor
+}
+
+Pool::Pool() {
+    //TODO: does the pool need a proper constructor?
 }

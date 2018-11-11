@@ -1,20 +1,27 @@
 #ifndef PO_PROJEKT_HANDLER_H
 #define PO_PROJEKT_HANDLER_H
 
+#include <string>
+
 using namespace std;
 
 template<class T>
 class Handler {
-    private:
-        T* object;
-    public:
-        explicit Handler(string name) {
-            object = new T(name);
-        }
+private:
+    T* object;
+public:
+    Handler(const string& name) {
+        object = new T(name);
+    }
 
-        ~Handler() {
-            delete object;
-        }
+    ~Handler() {
+        delete object;
+    }
+
+    T* getObject()
+    {
+        return object;
+    }
 };
 
 #endif
