@@ -20,7 +20,7 @@ public:
     ~Pool();
     void addEntry(Entry *entry);
     void removeEntry(std::string name);
-    friend Pool operator+=(Pool x, Entry entry);
+    friend Pool operator+=(Pool x, Entry *entry);
     friend Pool operator-=(Pool x, std::string name);
     void save();
     void load();
