@@ -17,8 +17,8 @@
 
 class Pool {
 private:
-    std::vector <Entry *> entries;
 public:
+    std::vector <Entry *> entries;
     Pool();
     ~Pool();
     void addEntry(Entry *entry);
