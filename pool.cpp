@@ -37,21 +37,21 @@ Pool::~Pool() {
 Pool::Pool() {}
 
 void Pool::save() {
-    fstream file;
-    file.open("baza", ios::binary, ios::out);
+    ofstream file;
+    file.open("baza", ios::binary | ios::trunc);
     for (int i = 0; i < entries.size(); i++) {
-        file << entries;
+        file.write((char*)entries[i],sizeof(*entries[i]));
     }
     file.close();
 }
 
 void Pool::load() {
-    fstream file;
+    ifstream file;
     Entry temp("temp");
-    file.open("baza", ios::binary, ios::in);
+    file.open("baza", ios::binary);
     while (!file.eof()) {
-        file >> temp;
-        entries.push_back(temp);
+        file.read(temp,sizeof(temp);
+        entries.push_back(&temp);
     }
     file.close();
 }
