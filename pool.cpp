@@ -47,11 +47,13 @@ void Pool::save() {
 
 void Pool::load() {
     ifstream file;
-    Entry *temp();
+    Entry *temp;
+    char *a;
     file.open("baza", ios::binary);
     while (!file.eof()) {
-        file.read(temp, sizeof(Entry) + 8);
-        entries.push_back(&temp);
+        file.read(a, sizeof(Entry) + 8);
+        temp = (Entry *) a;
+        entries.push_back(temp);
     }
     file.close();
 }

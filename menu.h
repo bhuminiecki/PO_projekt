@@ -17,12 +17,19 @@ class Menu {
 private:
 public:
     float calculateFitness(std::string name);
+
     void creationMenu(Pool pool);
+
     void removeMenu(Pool pool);
+
     void showMenu(Pool pool);
-    void displayMenu(Pool pool);
+
+    bool displayMenu(Pool pool);
+
     void showUpcoming(Pool pool);
+
     void editEntry(Pool pool);
+
     void suggest(Pool pool);
 };
 

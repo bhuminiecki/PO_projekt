@@ -5,9 +5,9 @@
 #include "InputExeption.h"
 
 InputExeption::InputExeption(char *msg) {
-    info=msg;
+    info = msg;
 }
 
-const char* InputExeption::what() {
+const char *InputExeption::what() {
     return info;
 }

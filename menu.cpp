@@ -81,7 +81,7 @@ void Menu::showUpcoming(Pool pool) {
     }
 }
 
-void Menu::editEntry(Pool pool){
+void Menu::editEntry(Pool pool) {
     cout << "----------------------+REMOVE+----------------------" << endl;
     cout << "type in the title you want to edit\n" << endl;
     string name;
@@ -92,19 +92,23 @@ void Menu::editEntry(Pool pool){
                 string *tag;
                 string temp;
                 int n;
-                for(int j=0;j<n;j++) {
-                    cin << temp;
-                    tag+=temp;
+                cin >> n;
+                tag = new string[n];
+                for (int j = 0; j < n; j++) {
+                    cin >> temp;
+                    tag[j] = temp;
                 }
-                pool.entries[i]->addTag(tag);
+                for (int j = 0; j < n; j++) {
+                    pool.entries[i]->addTag(tag[i]);
+                }
                 int tempLenght;
-                cin<<tempLenght;
+                cin >> tempLenght;
                 pool.entries[i]->setLenght(tempLenght);
                 float tempRating;
-                cin<<tempRating;
+                cin >> tempRating;
                 pool.entries[i]->setRating(tempRating);
                 bool wasIt;
-                cin<<wasIt;
+                cin >> wasIt;
                 pool.entries[i]->setWatched(wasIt);
                 return;
             }
@@ -120,7 +124,7 @@ void Menu::suggest(Pool pool) {
     cout << "entries rated above 8.0" << endl;
     for (int i = 0; i <= pool.entries.size(); i++) {
 
-        if (pool.entries[i]->showRating()>=8.0) {
+        if (pool.entries[i]->showRating() >= 8.0) {
             cout << pool.entries[i]->showTitle() << endl;
         }
     }

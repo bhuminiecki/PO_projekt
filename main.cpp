@@ -1,8 +1,9 @@
-#include <iostream>
+
 /*#include "entry.h"
 #include "event.h"
 #include "movie.h"*/
 #include "menu.h"
+
 int main() {
     /*Event obiekt("tutaj");
     obiekt.setLenght(60);
@@ -16,6 +17,6 @@ int main() {
 
     Pool pool = Pool();
     Menu menu = Menu();
-    while(menu.displayMenu(pool));
+    while (menu.displayMenu(pool));
     return 0;
 }
