@@ -81,6 +81,41 @@ void Menu::showUpcoming(Pool pool) {
     }
 }
 
+void Menu::editEntry(Pool pool){
+    cout << "----------------------+REMOVE+----------------------" << endl;
+    cout << "type in the title you want to edit\n" << endl;
+    string name;
+    cin >> name;
+    try {
+        for (int i = 0; i < pool.entries.size(); i++) {
+            if ((pool.entries[i]->showTitle()).compare(name) == true) {
+                string *tag;
+                string temp;
+                int n;
+                for(int j=0;j<n;j++) {
+                    cin << temp;
+                    tag+=temp;
+                }
+                pool.entries[i]->addTag(std::string tag);
+                int tempLenght;
+                cin<<tempLenght;
+                pool.entries[i]->setLenght(int tempLenght);
+                float tempRating;
+                cin<<tempRating;
+                pool.entries[i]->setRating(float tempRating);
+                bool wasIt;
+                cin<<wasIt;
+                pool.entries[i]->setWatched(bool wasIt);
+                return;
+            }
+        }
+        throw invalid_argument("there is no such entry");
+    } catch (const invalid_argument is) {
+        cerr << "Invalid argument: " << is.what();
+    }
+}
+}
+
 
 
 bool Menu::displayMenu(Pool pool) {
