@@ -14,7 +14,7 @@
 #include "movie.h"
 #include "event.h"
 #include "series.h"
-
+#include <fstream>
 
 class Pool {
 private:
@@ -26,6 +26,8 @@ public:
     void removeEntry(std::string name);
     friend Pool operator+=(Pool x, Entry entry);
     friend Pool operator-=(Pool x, std::string name);
+    void save();
+    void load();
 };
 
 
