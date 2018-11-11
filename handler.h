@@ -10,7 +10,7 @@ class Handler {
 private:
     T* object;
 public:
-    Handler(const string& name) {
+    explicit Handler(const string& name) {
         object = new T(name);
     }
 

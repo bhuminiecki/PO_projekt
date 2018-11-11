@@ -5,10 +5,11 @@
 
 class Series : public Entry{
 private:
-    int numberOfEpisodes;
 public:
     using Entry::Entry;
+
     void setEpisodes(int a);
+
     int showEpisodes();
 };
 

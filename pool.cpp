@@ -10,7 +10,7 @@ void Pool::removeEntry(string name) {
     try {
         for (int i = 0; i < entries.size(); i++) {
             string temp = entries[i]->showTitle();
-            if (temp.compare(name) == true) {
+            if (temp.compare(name) != 0) {
                 delete entries[i];
                 entries.erase(entries.begin() + 1);
                 return;

@@ -41,7 +41,7 @@ void Menu::removeMenu(Pool pool) {
     cin >> name;
     try {
         for (int i = 0; i < pool.entries.size(); i++) {
-            if ((pool.entries[i]->showTitle()).compare(name) == true) {
+            if ((pool.entries[i]->showTitle()).compare(name) != 0) {
                 pool -= name;
                 return;
             }
@@ -59,7 +59,7 @@ void Menu::showMenu(Pool pool) {
     cin >> name;
     try {
         for (int i = 0; i < pool.entries.size(); i++) {
-            if (pool.entries[i]->showTitle().compare(name) == true) {
+            if (pool.entries[i]->showTitle().compare(name) != 0) {
                 pool.entries[i]->showStatistics();
                 return;
             }
@@ -88,7 +88,7 @@ void Menu::editEntry(Pool pool) {
     cin >> name;
     try {
         for (int i = 0; i < pool.entries.size(); i++) {
-            if ((pool.entries[i]->showTitle()).compare(name) == true) {
+            if ((pool.entries[i]->showTitle()).compare(name) != 0) {
                 string *tag;
                 string temp;
                 int n;

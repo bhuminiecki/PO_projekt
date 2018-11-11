@@ -1,5 +1,7 @@
 #include "series.h"
 
+using namespace std;
+
 void Series::setEpisodes(int a){
     numberOfEpisodes=a;
 }
