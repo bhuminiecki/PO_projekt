@@ -7,7 +7,7 @@ int main() {
         file.open("baza", ios::trunc);
         file.close();
     }
-    //pool.load();
+    pool.load();
     Menu menu = Menu();
     while (menu.displayMenu(pool));
     return 0;

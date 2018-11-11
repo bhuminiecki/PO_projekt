@@ -63,7 +63,7 @@ void Entry::setRating(float tempRating) {
 void Entry::removeTag(string tag) {
     for (int i = 0; i < tags.size(); i++) {
         if (tags[i].compare(tag) != 0) {
-            tags.erase(tags.begin() + 1);
+            tags.erase(tags.begin() + i);
             return;
         }
     }
