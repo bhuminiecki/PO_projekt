@@ -13,6 +13,7 @@ private:
     int lenght;
     std::vector <std::string> tags;
     float fitness;
+    bool watched;
 public:
     Entry(std::string name);
     ~Entry(void);
@@ -26,7 +27,8 @@ public:
     void setLenght(int tempLenght);
     void setRating(float tempRating);
     void removeTag(std::string tag);
-
+    void setWatched(bool wasIt);
+    bool showWatched();
 };
 
 

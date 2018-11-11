@@ -37,6 +37,7 @@ void Entry::showStatistics(void){
         cout<<", ";
     }
     cout<<endl;
+    cout<<"Watched: "<<endl;
 }
 
 void Entry::addTag(string tag){
@@ -63,4 +64,12 @@ void Entry::removeTag(string tag){
     }catch(const invalid_argument is){
         cerr << "Invalid argument: " << is.what();
     }
+}
+
+void Entry::setWatched(bool wasIt) {
+    watched=wasIt;
+}
+
+bool Entry::showWatched() {
+    return watched;
 }
