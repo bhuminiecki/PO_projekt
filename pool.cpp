@@ -31,7 +31,7 @@ Pool operator-=(Pool x, std::string name) {
 }
 
 Pool::~Pool() {
-    entries.erase(entries.begin(),entries.end());
+    entries.erase(entries.begin(), entries.end());
 }
 
 Pool::Pool() {}
@@ -40,7 +40,7 @@ void Pool::save() {
     ofstream file;
     file.open("baza", ios::binary | ios::trunc);
     for (int i = 0; i < entries.size(); i++) {
-        file.write((char*)entries[i],sizeof(Entry)+8);
+        file.write((char *) entries[i], sizeof(Entry) + 8);
     }
     file.close();
 }
@@ -50,7 +50,7 @@ void Pool::load() {
     Entry temp("temp");
     file.open("baza", ios::binary);
     while (!file.eof()) {
-        file.read(temp,sizeof(Entry)+8);
+        file.read(temp, sizeof(Entry) + 8);
         entries.push_back(&temp);
     }
     file.close();

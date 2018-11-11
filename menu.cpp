@@ -96,16 +96,16 @@ void Menu::editEntry(Pool pool){
                     cin << temp;
                     tag+=temp;
                 }
-                pool.entries[i]->addTag(std::string tag);
+                pool.entries[i]->addTag(tag);
                 int tempLenght;
                 cin<<tempLenght;
-                pool.entries[i]->setLenght(int tempLenght);
+                pool.entries[i]->setLenght(tempLenght);
                 float tempRating;
                 cin<<tempRating;
-                pool.entries[i]->setRating(float tempRating);
+                pool.entries[i]->setRating(tempRating);
                 bool wasIt;
                 cin<<wasIt;
-                pool.entries[i]->setWatched(bool wasIt);
+                pool.entries[i]->setWatched(wasIt);
                 return;
             }
         }
@@ -114,7 +114,7 @@ void Menu::editEntry(Pool pool){
         cerr << "Invalid argument: " << is.what();
     }
 }
-}
+
 
 void Menu::suggest(Pool pool) {
     cout << "entries rated above 8.0" << endl;

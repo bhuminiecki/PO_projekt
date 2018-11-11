@@ -16,6 +16,6 @@ int main() {
 
     Pool pool = Pool();
     Menu menu = Menu();
-    while menu.displayMenu(pool));
+    while(menu.displayMenu(pool));
     return 0;
 }
