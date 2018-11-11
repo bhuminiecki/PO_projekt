@@ -145,26 +145,19 @@ bool Menu::displayMenu(Pool pool) {
         switch (x) {
             case 1:
                 creationMenu(pool);
-
                 break;
             case 2:
-
                 removeMenu(pool);
-
                 break;
             case 3:
-
                 showMenu(pool);
-
                 break;
             case 4:
                 showUpcoming(pool);
                 break;
             case 5:
-
                 editEntry(pool);
                 break;
-
             case 6:
                 suggest(pool);
                 break;

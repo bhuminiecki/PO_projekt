@@ -50,7 +50,7 @@ public:
     bool showWatched();
 
     time_t showTime();
-    
+
     int numberOfEpisodes;
 };
 
