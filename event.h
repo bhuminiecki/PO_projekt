@@ -6,13 +6,8 @@
 
 class Event : public Entry {
 private:
-    tm *date;
 public:
-    Event(std::string name) : Entry(name) {
-        time_t temp = 0;
-        date = localtime(&temp);
-    }
-
+    using Entry::Entry;
     void showDate();
 
     void addDate(int min, int hour, int day, int month, int year);

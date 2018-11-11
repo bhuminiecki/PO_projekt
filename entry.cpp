@@ -4,6 +4,8 @@ using namespace std;
 
 Entry::Entry(string name) {
     title = name;
+    time_t temp = 0;
+    date = localtime(&temp);
 }
 
 Entry::~Entry(void) {

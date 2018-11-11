@@ -9,6 +9,8 @@
 #include <iostream>
 #include <ctime>
 #include <algorithm>
+#include <string>
+#include <iostream>
 #include <vector>
 #include "pool.h"
 #include "handler.h"

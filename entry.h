@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <stdexcept>
+#include <ctime>
 
 class Entry {
 private:
@@ -14,9 +15,10 @@ private:
     std::vector<std::string> tags;
     float fitness;
     bool watched;
+protected:
+    tm *date;
 public:
     Entry(std::string name);
-
     ~Entry(void);
 
     std::string showTitle();
@@ -42,6 +44,8 @@ public:
     void setWatched(bool wasIt);
 
     bool showWatched();
+
+    virtual time_t showTime()=0;
 };
 
 

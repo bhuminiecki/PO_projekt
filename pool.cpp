@@ -38,6 +38,4 @@ Pool::~Pool() {
     //TODO: implement pool destructor
 }
 
-Pool::Pool() {
-    //TODO: does the pool need a proper constructor?
-}
+Pool::Pool() {}
