@@ -1,4 +1,5 @@
-#define PO_PROJEKT_POOL_H
+#ifndef PO_PROJEKT_HANDLER_H
+#define PO_PROJEKT_HANDLER_H
 
 using namespace std;
 
@@ -15,3 +16,5 @@ class Handler {
             delete object;
         }
 };
+
+#endif
