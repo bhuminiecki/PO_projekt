@@ -50,14 +50,7 @@ public:
     bool showWatched();
 
     time_t showTime();
-
-    //virtual void setRanking(int a);
-
-    //virtual int showRanking()=0;
-
-    //virtual void setEpisodes(int a);
-
-    //virtual int showEpisodes()=0;
+    
     int numberOfEpisodes;
 };
 
