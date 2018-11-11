@@ -9,6 +9,7 @@ class Event : public Entry {
 private:
 public:
     using Entry::Entry;
+
     void showDate();
 
     void addDate(int min, int hour, int day, int month, int year);

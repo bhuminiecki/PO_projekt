@@ -8,9 +8,9 @@ using namespace std;
 template<class T>
 class Handler {
 private:
-    T* object;
+    T *object;
 public:
-    explicit Handler(const string& name) {
+    explicit Handler(const string &name) {
         object = new T(name);
     }
 
@@ -18,8 +18,7 @@ public:
         delete object;
     }
 
-    T* getObject()
-    {
+    T *getObject() {
         return object;
     }
 };

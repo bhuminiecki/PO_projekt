@@ -3,7 +3,7 @@
 
 #include "entry.h"
 
-class Series : public Entry{
+class Series : public Entry {
 private:
 public:
     using Entry::Entry;

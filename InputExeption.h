@@ -3,12 +3,13 @@
 
 #include <exception>
 
-class InputExeption :public std::exception {
+class InputExeption : public std::exception {
 private:
-    const char* info;
+    const char *info;
 public:
-    InputExeption(char* msg);
-    const char* what();
+    InputExeption(char *msg);
+
+    const char *what();
 };
 
 

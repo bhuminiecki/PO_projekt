@@ -2,10 +2,10 @@
 
 using namespace std;
 
-void Series::setEpisodes(int a){
-    numberOfEpisodes=a;
+void Series::setEpisodes(int a) {
+    numberOfEpisodes = a;
 }
 
-int Series::showEpisodes(){
-        return numberOfEpisodes;
+int Series::showEpisodes() {
+    return numberOfEpisodes;
 };

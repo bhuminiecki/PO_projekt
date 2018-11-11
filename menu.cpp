@@ -42,8 +42,12 @@ void Menu::removeMenu(Pool pool) {
     try {
         for (int i = 0; i < pool.entries.size(); i++) {
             if ((pool.entries[i]->showTitle()).compare(name) != 0) {
-                pool -= name;
-                return;
+                try {
+                    pool -= name;
+                    return;
+                } catch (const invalid_argument is) {
+                    cerr << "Invalid argument: " << is.what();
+                }
             }
         }
         throw invalid_argument("there is no such entry");
@@ -133,7 +137,8 @@ void Menu::suggest(Pool pool) {
 
 bool Menu::displayMenu(Pool pool) {
     cout << "----------------------+MENU+----------------------" << endl;
-    cout << "type in:\n1 - to add an entry\n2 - to remove an entry\n3 - to see an entry\n4 - show upcoming\n 10- close";
+    cout
+            << "type in:\n1 - to add an entry\n2 - to remove an entry\n3 - to see an entry\n4 - show upcoming\n5 - edit entry\n6 - suggestions\n10 - close";
     int x;
     cin >> x;
     switch (x) {
