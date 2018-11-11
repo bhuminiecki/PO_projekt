@@ -39,21 +39,19 @@ void Menu::removeMenu(Pool pool) {
     cout << "type in the title you want to delete" << endl;
     string name;
     cin >> name;
-    try {
-        for (int i = 0; i < pool.entries.size(); i++) {
-            if ((pool.entries[i]->showTitle()).compare(name) != 0) {
-                try {
-                    pool -= name;
-                    return;
-                } catch (const invalid_argument is) {
-                    cerr << "Invalid argument: " << is.what();
-                }
+
+    for (int i = 0; i < pool.entries.size(); i++) {
+        if ((pool.entries[i]->showTitle()).compare(name) != 0) {
+            try {
+                pool -= name;
+                return;
+            } catch (const invalid_argument is) {
+                cerr << "Invalid argument: " << is.what();
             }
         }
-        throw invalid_argument("there is no such entry");
-    } catch (const invalid_argument is) {
-        cerr << "Invalid argument: " << is.what();
     }
+    throw invalid_argument("there is no such entry");
+
 }
 
 void Menu::showMenu(Pool pool) {
@@ -61,17 +59,15 @@ void Menu::showMenu(Pool pool) {
     cout << "type in the title you want to view" << endl;
     string name;
     cin >> name;
-    try {
-        for (int i = 0; i < pool.entries.size(); i++) {
-            if (pool.entries[i]->showTitle().compare(name) != 0) {
-                pool.entries[i]->showStatistics();
-                return;
-            }
+
+    for (int i = 0; i < pool.entries.size(); i++) {
+        if (pool.entries[i]->showTitle().compare(name) != 0) {
+            pool.entries[i]->showStatistics();
+            return;
         }
-        throw invalid_argument("there is no such entry");
-    } catch (const invalid_argument is) {
-        cerr << "Invalid argument: " << is.what();
     }
+    throw invalid_argument("there is no such entry");
+
 }
 
 void Menu::showUpcoming(Pool pool) {
@@ -90,37 +86,35 @@ void Menu::editEntry(Pool pool) {
     cout << "type in the title you want to edit\n" << endl;
     string name;
     cin >> name;
-    try {
-        for (int i = 0; i < pool.entries.size(); i++) {
-            if ((pool.entries[i]->showTitle()).compare(name) != 0) {
-                string *tag;
-                string temp;
-                int n;
-                cin >> n;
-                tag = new string[n];
-                for (int j = 0; j < n; j++) {
-                    cin >> temp;
-                    tag[j] = temp;
-                }
-                for (int j = 0; j < n; j++) {
-                    pool.entries[i]->addTag(tag[i]);
-                }
-                int tempLenght;
-                cin >> tempLenght;
-                pool.entries[i]->setLenght(tempLenght);
-                float tempRating;
-                cin >> tempRating;
-                pool.entries[i]->setRating(tempRating);
-                bool wasIt;
-                cin >> wasIt;
-                pool.entries[i]->setWatched(wasIt);
-                return;
+
+    for (int i = 0; i < pool.entries.size(); i++) {
+        if ((pool.entries[i]->showTitle()).compare(name) != 0) {
+            string *tag;
+            string temp;
+            int n;
+            cin >> n;
+            tag = new string[n];
+            for (int j = 0; j < n; j++) {
+                cin >> temp;
+                tag[j] = temp;
             }
+            for (int j = 0; j < n; j++) {
+                pool.entries[i]->addTag(tag[i]);
+            }
+            int tempLenght;
+            cin >> tempLenght;
+            pool.entries[i]->setLenght(tempLenght);
+            float tempRating;
+            cin >> tempRating;
+            pool.entries[i]->setRating(tempRating);
+            bool wasIt;
+            cin >> wasIt;
+            pool.entries[i]->setWatched(wasIt);
+            return;
         }
-        throw invalid_argument("there is no such entry");
-    } catch (const invalid_argument is) {
-        cerr << "Invalid argument: " << is.what();
     }
+    throw invalid_argument("there is no such entry");
+
 }
 
 
@@ -141,35 +135,44 @@ bool Menu::displayMenu(Pool pool) {
             << "type in:\n1 - to add an entry\n2 - to remove an entry\n3 - to see an entry\n4 - show upcoming\n5 - edit entry\n6 - suggestions\n10 - close";
     int x;
     cin >> x;
-    switch (x) {
-        case 1:
-            try {
+    try {
+        switch (x) {
+            case 1:
                 creationMenu(pool);
-            } catch (const invalid_argument is) {
-                cerr << "Invalid argument: " << is.what();
-            }
-            break;
-        case 2:
-            removeMenu(pool);
-            break;
-        case 3:
-            showMenu(pool);
-            break;
-        case 4:
-            showUpcoming(pool);
-            break;
-        case 5:
-            editEntry(pool);
-            break;
-        case 6:
-            suggest(pool);
-            break;
-        case 10:
-            pool.save();
-            return false;
-        default:
-            throw (invalid_argument("wrong option"));
+
+                break;
+            case 2:
+
+                removeMenu(pool);
+
+                break;
+            case 3:
+
+                showMenu(pool);
+
+                break;
+            case 4:
+                showUpcoming(pool);
+                break;
+            case 5:
+
+                editEntry(pool);
+                break;
+
+            case 6:
+                suggest(pool);
+                break;
+            case 10:
+                pool.save();
+                return false;
+            default:
+                throw (invalid_argument("wrong option"));
+                break;
+        }
+    } catch (const invalid_argument is) {
+        cerr << "Invalid argument: " << is.what();
     }
+
     return true;
 }
 
