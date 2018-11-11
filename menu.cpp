@@ -128,11 +128,17 @@ void Menu::suggest(Pool pool) {
     }
 }
 
+void Menu::showAll(Pool pool) {
+    for (int i = 0; i <= pool.entries.size(); i++) {
+        cout << pool.entries[i]->showTitle() << endl;
+    }
+}
+
 
 bool Menu::displayMenu(Pool pool) {
     cout << "----------------------+MENU+----------------------" << endl;
     cout
-            << "type in:\n1 - to add an entry\n2 - to remove an entry\n3 - to see an entry\n4 - show upcoming\n5 - edit entry\n6 - suggestions\n10 - close";
+            << "type in:\n1 - to add an entry\n2 - to remove an entry\n3 - to see an entry\n4 - show upcoming\n5 - edit entry\n6 - suggestions\n7 - show all1\n10 - close";
     int x;
     cin >> x;
     try {
@@ -162,6 +168,8 @@ bool Menu::displayMenu(Pool pool) {
             case 6:
                 suggest(pool);
                 break;
+            case 7:
+                showAll(pool);
             case 10:
                 pool.save();
                 return false;

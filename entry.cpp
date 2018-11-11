@@ -74,6 +74,10 @@ void Entry::setWatched(bool wasIt) {
     watched = wasIt;
 }
 
+void Entry::setTitle(string name) {
+    title = name;
+}
+
 bool Entry::showWatched() {
     return watched;
 }

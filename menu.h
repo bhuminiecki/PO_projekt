@@ -31,6 +31,8 @@ public:
     void editEntry(Pool pool);
 
     void suggest(Pool pool);
+
+    void showAll(Pool pool);
 };
 
 

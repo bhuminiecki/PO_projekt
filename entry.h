@@ -45,6 +45,8 @@ public:
 
     void setWatched(bool wasIt);
 
+    void setTitle(std::string name);
+
     bool showWatched();
 
     time_t showTime();

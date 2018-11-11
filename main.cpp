@@ -9,6 +9,10 @@ int main() {
     }
     pool.load();
     Menu menu = Menu();
-    while (menu.displayMenu(pool));
+    try {
+        while (menu.displayMenu(pool));
+    } catch (...) {
+        cerr << "whoops" << endl;
+    }
     return 0;
 }

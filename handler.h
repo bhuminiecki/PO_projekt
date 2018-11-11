@@ -12,6 +12,7 @@ private:
 public:
     explicit Handler(const string &name) {
         object = new T(name);
+        object->setTitle(name);
     }
 
     ~Handler() {
