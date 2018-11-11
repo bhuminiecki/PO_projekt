@@ -1,7 +1,3 @@
-//
-// Created by Wombat on 11/11/2018.
-//
-
 #ifndef PO_PROJEKT_POOL_H
 #define PO_PROJEKT_POOL_H
 
